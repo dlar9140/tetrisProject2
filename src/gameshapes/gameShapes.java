@@ -14,9 +14,7 @@ private Tetrominoe pieceShape;
 private int coords[][];
 private int[][][] coordsTable;
 
-}
-
-public Shape() 
+public void Shape() 
 {
 
     coords = new int[4][2];
@@ -73,3 +71,38 @@ public int minX() {
   return m;
 }
 
+
+public int minY() 
+{
+    
+    int m = coords[0][1];
+    
+    for (int i=0; i < 4; i++) 
+    {
+        
+        m = Math.min(m, coords[i][1]);
+    }
+    
+    return m;
+ }
+
+
+public Shape rotateRight() 
+{
+    
+    if (pieceShape == Tetrominoe.SquareShape)
+        return this;
+
+    Shape result = new Shape();
+    result.pieceShape = pieceShape;
+
+    for (int i = 0; i < 4; ++i) 
+    {
+
+        result.setX(i, -y(i));
+        result.setY(i, x(i));
+    }
+    
+    return result;
+}
+}
