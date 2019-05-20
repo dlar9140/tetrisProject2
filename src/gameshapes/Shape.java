@@ -2,7 +2,7 @@ package gameshapes;
 
 import java.util.Random;
 
-public class gameShapes
+public class Shape
 {
 	 protected enum Tetrominoe 
 	 { 
